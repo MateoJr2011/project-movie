@@ -51,11 +51,7 @@ function renderMovies() {
 
 }
 const watchlist = {
-  movies: [{
-    title: "9",
-    genre: "Horror",
-    watched: false
-}],
+  movies: [],
   toggleWatched(index) {
     // TODO (Step 4)
     this.movies[index].watched = !this.movies[index].watched
