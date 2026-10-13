@@ -75,9 +75,32 @@ function loadMovies() {
 
 
 
-// form.addEventListener("submit", (event) => {
-//   // TODO (Step 5)
-// });
+form.addEventListener("submit", (event) => {
+  // TODO (Step 5)
+  event.preventDefault()
+  let movieTitle = titleInput.value.trim()
+  let movieGenre = genreSelect.value
+  if (movieTitle === ""){
+    message.textContent = "Enter a movie"
+    return
+  }
+  if (movieGenre === ""){
+    message.textContent = "choose a genre"
+    return
+  }
+
+  watchlist.movies.push({
+    title: movieTitle,
+    genre: movieGenre,
+    watched: false
+  })
+
+  saveMovies()
+  renderMovies()
+
+  message.textContent = ""
+  titleInput.value = ""
+});
 
 loadMovies();
 renderMovies();
