@@ -58,9 +58,10 @@ const watchlist = {
 }],
   toggleWatched(index) {
     // TODO (Step 4)
+    this.movies[index].watched = !this.movies[index].watched
   },
   removeMovie(index) {
-    // TODO (Step 4)
+    this.movies.splice(index, 1)
   }
 }
 
