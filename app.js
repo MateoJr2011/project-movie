@@ -67,10 +67,22 @@ const watchlist = {
 
 function saveMovies() {
   // TODO (Step 6)
+  localStorage.setItem("movies",
+    JSON.stringify(watchlist.movies))
 }
 
 function loadMovies() {
-  // TODO (Step 6)
+  // TODO (Step 6)\
+  const saved = localStorage.getItem("movies")
+
+  if (saved === null){
+    return
+  }
+  try {
+    watchlist.movies = JSON.parse(saved)
+  } catch (e){
+    watchlist.movies = []
+  }
 }
 
 
